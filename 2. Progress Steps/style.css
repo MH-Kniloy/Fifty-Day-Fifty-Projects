@@ -1,20 +1,100 @@
-@import url('https://fonts.googleapis.com/css2?family=Muli:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Muli:ital,wght@0,200..1000;1,200..1000&display=swap");
 
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
-:root{
-    --line-border-empty: #f6f7fb;
+:root {
+  --line-border-empty: #b3b4ba;
+  --line-border-fill: #3498db;
 }
 
-body{
-    background-color: var(--line-border-empty);
+body {
+  background-color: #f6f7fb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  font-family: "Muli", sans-serif;
+}
+
+.container {
+  text-align: center;
+}
+
+.progress-container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 30px;
+  max-width: 100%;
+  width: 350px;
+}
+.progress-container::before {
+  content: "";
+  background-color: var(--line-border-empty);
+  width: 100%;
+  height: 4px;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.progress {
+  background-color: var(--line-border-fill);
+  width: 10%;
+  height: 4px;
+  z-index: -1;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  transition: 0.4s ease;
+}
+
+.circle{
+    background-color: white;
+    color: #999;
+    height: 30px;
+    width: 30px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
-    overflow: hidden;
-    font-family: 'Muli', sans-serif;
+    justify-content: center;
+    border-radius: 50%;
+    border: #b3b4ba 3px solid;
+    transition: 0.4s ease;
+}
+
+.circle.active{
+    border-color: #3498db;
+}
+
+.btn{
+    background-color: var(--line-border-fill);
+    color: white;
+    border: none;
+    cursor: pointer;
+
+    padding: 8px 30px;
+    border-radius: 6px;
+    font-family: inherit;
+    margin: 5px;
+    font-size: 14px;
+}
+
+.btn:active{
+    transform: scale(0.95);
+}
+
+.btn:focus{
+    outline: 0;
+}
+
+.btn:disabled{
+    background-color: var(--line-border-empty);
+    cursor: not-allowed;
 }
