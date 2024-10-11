@@ -8,6 +8,9 @@ let currentActive = 1;
 
 next.addEventListener("click", () => {
   currentActive++;
+  if (currentActive > circlesArr.length) {
+    currentActive = circlesArr.length;
+  }
 
   update()
 });
@@ -21,9 +24,7 @@ prev.addEventListener("click", () => {
 });
 
 const update = () => {
-      if (currentActive > circlesArr.length) {
-        currentActive = circlesArr.length;
-      }
+      
       circlesArr.map((circle, idx) => {
         if (idx < currentActive) {
           circle.classList.add("active");
