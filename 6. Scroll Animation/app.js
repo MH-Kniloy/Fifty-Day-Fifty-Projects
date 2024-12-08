@@ -3,8 +3,8 @@ const boxesArr=Array.from(boxes)
 
 
 window.addEventListener('scroll', ()=>{
-
-       const triggerBottom=window.innerHeight/5*4;
+    
+       const triggerBottom=window.innerHeight * 80/100;
        
 
     boxesArr.map((box)=>{
